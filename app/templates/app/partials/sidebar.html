@@ -19,7 +19,7 @@
                 <li>
                     <a class="active" href="/"><span class="icon home" aria-hidden="true"></span>Dashboard</a>
                 </li>
-                <li>
+                {% comment %} <li>
                     <a class="show-cat-btn" href="##">
                         <span class="icon document" aria-hidden="true"></span>Posts
                         <span class="category__btn transparent-btn" title="Open list">
@@ -35,8 +35,8 @@
                             <a href="new-post.html">Add new post</a>
                         </li>
                     </ul>
-                </li>
-                <li>
+                </li> {% endcomment %}
+                {% comment %} <li>
                     <a class="show-cat-btn" href="##">
                         <span class="icon folder" aria-hidden="true"></span>Categories
                         <span class="category__btn transparent-btn" title="Open list">
@@ -46,11 +46,11 @@
                     </a>
                     <ul class="cat-sub-menu">
                         <li>
-                            <a href="categories.html">All categories</a>
+                            <a href="{% url 'category_index' %}">All categories</a>
                         </li>
                     </ul>
-                </li>
-                <li>
+                </li> {% endcomment %}
+                {% comment %} <li>
                     <a class="show-cat-btn" href="##">
                         <span class="icon image" aria-hidden="true"></span>Media
                         <span class="category__btn transparent-btn" title="Open list">
@@ -83,16 +83,16 @@
                             <a href="new-page.html">Add new page</a>
                         </li>
                     </ul>
-                </li>
+                </li> {% endcomment %}
                 <li>
-                    <a href="comments.html">
+                    <a href="{% url 'category_index' %}">
                         <span class="icon message" aria-hidden="true"></span>
-                        Comments
+                        Categories
                     </a>
                     <span class="msg-counter">7</span>
                 </li>
             </ul>
-            <span class="system-menu__title">system</span>
+            {% comment %} <span class="system-menu__title">system</span>
             <ul class="sidebar-body-menu">
                 <li>
                     <a href="appearance.html"><span class="icon edit" aria-hidden="true"></span>Appearance</a>
@@ -134,10 +134,10 @@
                 <li>
                     <a href="##"><span class="icon setting" aria-hidden="true"></span>Settings</a>
                 </li>
-            </ul>
+            </ul> {% endcomment %}
         </div>
     </div>
-    <div class="sidebar-footer">
+    {% comment %} <div class="sidebar-footer">
         <a href="##" class="sidebar-user">
             <span class="sidebar-user-img">
                 <picture><source srcset="./img/avatar/avatar-illustrated-01.webp" type="image/webp"><img src="./img/avatar/avatar-illustrated-01.png" alt="User name"></picture>
@@ -147,5 +147,5 @@
                 <span class="sidebar-user__subtitle">Support manager</span>
             </div>
         </a>
-    </div>
+    </div> {% endcomment %}
 </aside>
