@@ -27,5 +27,7 @@ urlpatterns = [
 
     #views
     url(r'^$',app.views.home, name='home'),
+    #show categories
+    url(r'^categories/$',app.views.category_index, name='category_index'),
      
 ]
