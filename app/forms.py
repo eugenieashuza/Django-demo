@@ -1,4 +1,4 @@
-from djano.forms import ModelForm
+from django.forms import ModelForm
 from app.models import Category
 
 class CategoryForm(ModelForm):
