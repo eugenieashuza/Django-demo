@@ -2,14 +2,14 @@
 {% extends "app/layout/layout.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-    <div class="col-lg-12">
+    <div class="col-lg-12 card mt-4">
         <div class="panel panel-default">
-            <div class="panel-heading card mb-2 mt-2">Enregistrement de la categorie</div>
+            <div class="panel-heading mb-2 mt-2">Enregistrement de la categorie</div>
             <div class="panel-body">
                 <div class="col-md-6">
-                    <form role="form" action="{%url 'category_create'%}" method="post">
+                    <form role="form" action="{%url 'category_create'%}" method="post" class="mb-3 mt-3">
                         {% csrf_token %}
-                        <div class="form-group">
+                        <div class="form-group ">
                             {{ form.category_name|as_crispy_field }}
 
                             <span class="invalid-feedback"></span>
