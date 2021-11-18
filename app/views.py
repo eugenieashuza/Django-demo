@@ -58,4 +58,8 @@ def category_edit(request, id):
         if form.is_valid():
             form.save()
         return redirect('/categories')
-      
+    
+def category_delete(request, id):
+    category = Category.objects.get(pk=id)
+    category.delete()
+    return redirect('/categories')     
