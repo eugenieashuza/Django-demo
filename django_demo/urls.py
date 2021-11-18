@@ -29,5 +29,12 @@ urlpatterns = [
     url(r'^$',app.views.home, name='home'),
     #show categories
     url(r'^categories/$',app.views.category_index, name='category_index'),
+    #show add 
+    url(r'^categories/create$',app.views.category_create, name='category_create'),
+    #edit 
+    path('categories/edit/<int:id>', app.views.category_edit, name='category_edit'),
+    #delete
+    path('categories/delete/<int:id>', app.views.category_delete, name='category_delete'),
+
      
 ]
