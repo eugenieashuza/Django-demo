@@ -1,0 +1,48 @@
+{% extends "app/layout/layout.html" %}
+{% block content %}
+<main class="main users chart-page" id="skip-target">
+    <div class="container">
+      <h2 class="main-title">Produits</h2>
+      <div class="row stat-cards">
+<a  href={%url 'product_create'%} class="btn btn-primary">
+  New
+</a>
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Product name</th>
+            <th>Categorie name</th>
+            <th> Prix </th>
+            <th>Options</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for produit in produits %}
+          <tr>
+            <td>{{ produit.id }} </td>
+            <td>{{ produit.product_name }}</td>
+            <td>{{ produit.category_id}}</td>
+            <td>{{ produit.unit_price }}</td>
+            <td>
+              {% comment %} <div class="card-footer"> {% endcomment %}
+                <a href="{% url 'product_edit' produit.id %}" class="btn btn-primary">Modifier</a>
+                <form action="{% url 'product_delete' produit.id %}" method="post">
+                  {% csrf_token %}
+                  <button type="submit" onclick="return confirm('voulez-vous supprimer ce produit ?')"
+                    class="btn btn-danger btn-sm">Supprimer</button>
+                </form>
+              {% comment %} </div> {% endcomment %}
+            </td>
+          </tr>
+          {% endfor %}
+
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+ </main> 
+
+{% endblock %}
