@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include 'app/partials/head.html' %}
+<body>
+  <div class="layer"></div>
+<!-- ! Body -->
+<a class="skip-link sr-only" href="#skip-target">Skip to content</a>
+<div class="page-flex">
+  <!-- ! Sidebar -->
+  {% include 'app/partials/sidebar.html' %}
+  <div class="main-wrapper">
+    <!-- ! Main nav -->
+    {% include 'app/partials/navbar.html' %}
+  
+    <!-- ! Main -->
+    {% block content %}{% endblock %}
+    <!-- ! Footer -->
+    {% include 'app/partials/footer.html' %}
+
+  </div>
+</div>
+<!-- Chart library -->
+{% include 'app/partials/script.html' %}
+{% block scripts %}{% endblock %}
+</body>
+
+</html>
