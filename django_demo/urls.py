@@ -35,6 +35,15 @@ urlpatterns = [
     path('categories/edit/<int:id>', app.views.category_edit, name='category_edit'),
     #delete
     path('categories/delete/<int:id>', app.views.category_delete, name='category_delete'),
+    
+    #products
+    path('produits', app.views.products_index, name='products_index'),
+    #show add 
+    path('produits/create',app.views.product_create, name='product_create'),
+    #edit 
+    path('produits/edit/<int:id>', app.views.product_edit, name='product_edit'),
+    #delete
+    path('produits/delete/<int:id>', app.views.product_delete, name='product_delete'),
 
      
 ]
